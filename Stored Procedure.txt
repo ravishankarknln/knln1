@@ -1,0 +1,31 @@
+need SSL https://rightcrowd-trn.spe.sony.com for our rightcorwd training environment and this will be used in two servers USSWH0031/32. This site will be accessible like https://rightcrowd-trn.spe.sony.com/rightcrowd using load balancer. 
+
+
+Once procedure is created then change create to Alter
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Ravishankar>
+-- Create date: <11-09-2017>
+-- Description:	<Compare Studio & IT events clash>
+-- =============================================
+Create PROCEDURE CompareEvents 
+	
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+   	SELECT IE.Name [IT Event], IE.DOE [Date of Event], SE.Name [Studio Event] from itevents IE, studioevents SE where IE.DOE=SE.DOE
+	--and IE.DOE > GetDate()
+
+
+END
+GO
+
+RSA hard token.
+
+156166703--
